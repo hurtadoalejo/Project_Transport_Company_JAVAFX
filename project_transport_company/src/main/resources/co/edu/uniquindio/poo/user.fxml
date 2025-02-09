@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: #aba8a6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.UserViewController">
+   <children>
+      <Label fx:id="lbl_1" layoutX="435.0" layoutY="14.0" text="User Menu" textFill="#434343">
+         <font>
+            <Font name="Calibri Bold" size="72.0" />
+         </font>
+      </Label>
+      <Button fx:id="bt_5" layoutX="507.0" layoutY="580.0" mnemonicParsing="false" onAction="#onOpenMenu" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Principal Menu" textFill="#434343">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Button>
+      <Label fx:id="lb_3" layoutX="653.0" layoutY="123.0" text="Age:" textFill="#434343">
+         <font>
+            <Font name="Verdana Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb_4" layoutX="222.0" layoutY="190.0" text="Wight:" textFill="#434343">
+         <font>
+            <Font name="Verdana Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb_2" layoutX="224.0" layoutY="123.0" text="Name:" textFill="#434343">
+         <font>
+            <Font name="Verdana Bold" size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tbl_1" layoutX="196.0" layoutY="349.0" prefHeight="200.0" prefWidth="829.0" style="-fx-border-color: #434343; -fx-border-width: 2; -fx-font-size: 18px;">
+         <columns>
+            <TableColumn fx:id="cl_name" prefWidth="257.0" text="Name" />
+            <TableColumn fx:id="cl_age" prefWidth="261.0" text="Age" />
+            <TableColumn fx:id="cl_wight" prefWidth="308.0" text="Wight" />
+         </columns>
+      </TableView>
+      <Button fx:id="bt_1" layoutX="261.0" layoutY="266.0" mnemonicParsing="false" onAction="#onAddUser" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Add User" textFill="#434343">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="bt_2" layoutX="439.0" layoutY="266.0" mnemonicParsing="false" onAction="#onUpdateUser" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Update User" textFill="#434343">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="bt_3" layoutX="652.0" layoutY="266.0" mnemonicParsing="false" onAction="#onDeleteUser" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Delete User" textFill="#434343">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="bt_4" layoutX="847.0" layoutY="266.0" mnemonicParsing="false" onAction="#onClean" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Clean" textFill="#434343">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txt_1" layoutX="349.0" layoutY="119.0" style="-fx-background-color: #bcb4b0; -fx-text-fill: #434343; -fx-border-color: #434343; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 2;">
+         <font>
+            <Font name="Verdana" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txt_3" layoutX="349.0" layoutY="186.0" style="-fx-background-color: #bcb4b0; -fx-text-fill: #434343; -fx-border-color: #434343; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 2;">
+         <font>
+            <Font name="Verdana" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txt_2" layoutX="743.0" layoutY="119.0" style="-fx-background-color: #bcb4b0; -fx-text-fill: #434343; -fx-border-color: #434343; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 2;">
+         <font>
+            <Font name="Verdana" size="18.0" />
+         </font>
+      </TextField>
+   </children>
+</Pane>
