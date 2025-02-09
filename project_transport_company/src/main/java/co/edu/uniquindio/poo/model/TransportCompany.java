@@ -137,11 +137,13 @@ public class TransportCompany {
         boolean done = false;
         for (User user : usersList) {
             if (user.getName().equals(name)) {
-                user.setAge(newUser.getAge());
-                user.setAge(newUser.getAge());
-                user.setWight(newUser.getWight());
-                done = true;
-                break;
+                if (!verifyUser(newUser.getName()) || newUser.getName().equals(name)) {
+                    user.setName(newUser.getName());
+                    user.setAge(newUser.getAge());
+                    user.setWight(newUser.getWight());
+                    done = true;
+                    break;
+                }
             }
         }
         return done;

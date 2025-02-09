@@ -92,17 +92,17 @@ public class UserViewController {
 
     @FXML
     void onAddUser() {
-
+        addUser();
     }
 
     @FXML
     void onUpdateUser() {
-
+        updateUser();
     }
 
     @FXML
     void onDeleteUser() {
-        
+        deleteUser();
     }
 
     @FXML
@@ -119,18 +119,65 @@ public class UserViewController {
         return user;
     }
 
+    /**
+     * Method to add an user into the users list
+     */
     private void addUser(){
-        if (condition) {
-            
+        if (verifyFilledFields() && verifyValidFields()) {
+            User user = buildUser();
+            if (userController.createUser(user)) {
+                usersList.add(user);
+                cleanUserFields();
+            }
         }
     }
 
+    /**
+     * Method to delete an user from the users list by a name given
+     */
+    private void deleteUser(){
+        if (userController.deleteUser(txt_1.getText())) {
+            usersList.remove(selectedUser);
+            cleanUserFields();
+            cleanSelection();
+        }
+    }
+
+    /**
+     * Method to update an user's information
+     */
+    private void updateUser(){
+        if (verifyFilledFields() && verifyValidFields()) {
+            if (selectedUser != null && userController.updateUser(selectedUser.getName(), buildUser())) {
+                tbl_1.refresh();
+                cleanUserFields();
+                cleanSelection();
+            }
+        }
+    }
+
+    /**
+     * Method to verify if all the fields have text inside them
+     * @return Boolean about filled fields
+     */
     private boolean verifyFilledFields(){
         boolean filled = false;
-        if (!txt_1.getText().isEmpty()) {
+        if (!txt_1.getText().isEmpty() && !txt_2.getText().isEmpty() && !txt_3.getText().isEmpty()) {
             filled = true;
         }
         return filled;
+    }
+
+    /**
+     * Method to verify if all the field differents to String have the valid data
+     * @return Boolean about the valid fields
+     */
+    private boolean verifyValidFields(){
+        boolean valid = false;
+        if (isInteger(txt_2.getText()) && isDouble(txt_3.getText())) {
+            valid = true;
+        }
+        return valid;
     }
 
     /**
