@@ -315,7 +315,7 @@ public class VehicleViewController {
     }
 
     /**
-     * Method to obtain the transport company's proprietors list and then assign it to the controller's proprietors list
+     * Method to obtain the transport company's vehicles list and then assign it to the controller's vehicles list
      */
     private void obtainVehicles() {
         vehiclesList.addAll(vehicleController.obtainVehiclesList());
@@ -419,6 +419,9 @@ public class VehicleViewController {
         });
     }
 
+    /**
+     * Method to manage the selection type of the vehicle type
+     */
     private void manageSelectionType(){
         String vehicleType = cb_type.getSelectionModel().getSelectedItem();
         if (vehicleType == null) {

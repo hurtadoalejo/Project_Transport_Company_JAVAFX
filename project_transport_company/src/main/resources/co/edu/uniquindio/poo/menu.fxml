@@ -27,7 +27,12 @@
             <Font name="Calibri Bold" size="64.0" />
          </font>
       </Button>
-      <Button fx:id="bt_4" layoutX="466.0" layoutY="444.0" mnemonicParsing="false" onAction="#onOpenSearch" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Search" textFill="#434343">
+      <Button fx:id="bt_4" layoutX="874.0" layoutY="449.0" mnemonicParsing="false" onAction="#onOpenSearch" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Search" textFill="#434343">
+         <font>
+            <Font name="Calibri Bold" size="64.0" />
+         </font>
+      </Button>
+      <Button fx:id="bt_5" layoutX="127.0" layoutY="449.0" mnemonicParsing="false" onAction="#onOpenAssociatedToVehicle" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Associated To Vehicle" textFill="#434343">
          <font>
             <Font name="Calibri Bold" size="64.0" />
          </font>

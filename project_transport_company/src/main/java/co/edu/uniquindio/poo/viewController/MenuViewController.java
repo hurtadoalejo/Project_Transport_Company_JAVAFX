@@ -21,6 +21,9 @@ public class MenuViewController {
     private URL location;
 
     @FXML
+    private Button bt_5;
+
+    @FXML
     private Label lbl_1;
 
     @FXML
@@ -70,6 +73,11 @@ public class MenuViewController {
         //app.openSearch();
     }
 
+    @FXML
+    void onOpenAssociatedToVehicle() {
+        app.openAssociated();
+    }
+
     /**
      * Method to assign the principal application for this controller
      * @param app Principal application to assign
@@ -83,6 +91,7 @@ public class MenuViewController {
      */
     @FXML
     void initialize() {
+        assert bt_5 != null : "fx:id=\"bt_5\" was not injected: check your FXML file 'menu.fxml'.";
         assert lbl_1 != null : "fx:id=\"lbl_1\" was not injected: check your FXML file 'menu.fxml'.";
         assert bt_3 != null : "fx:id=\"bt_3\" was not injected: check your FXML file 'menu.fxml'.";
         assert bt_4 != null : "fx:id=\"bt_4\" was not injected: check your FXML file 'menu.fxml'.";

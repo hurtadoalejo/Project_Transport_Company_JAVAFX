@@ -262,7 +262,7 @@ public class UserViewController {
     }
 
     /**
-     * Method to clean the element sleccion from the user table
+     * Method to clean the element selection from the user table
      */
     private void cleanSelection(){
         tbl_1.getSelectionModel().clearSelection();

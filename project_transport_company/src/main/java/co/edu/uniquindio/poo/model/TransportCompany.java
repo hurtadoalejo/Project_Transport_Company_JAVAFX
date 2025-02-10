@@ -288,15 +288,13 @@ public class TransportCompany {
     }
 
     public boolean changeAttributesPassengerVehicle(PassengerVehicle passengerVehicle, PassengerVehicle newPassengerVehicle){
-        if (newPassengerVehicle.getMaxPassengers() >= passengerVehicle.getAssociatedUsersList().size() && !isProprietorInAssociates(newPassengerVehicle.getAssociatedProprietorList(), newPassengerVehicle.getProprietor())){
+        if (newPassengerVehicle.getMaxPassengers() >= passengerVehicle.getAssociatedUsersList().size() && !isProprietorInAssociates(passengerVehicle.getAssociatedProprietorList(), newPassengerVehicle.getProprietor())){
             if (!verifyVehicle(newPassengerVehicle.getPlate()) || passengerVehicle.getPlate().equals(newPassengerVehicle.getPlate())){
                 if (isProprietorAvailable(newPassengerVehicle.getProprietor()) || newPassengerVehicle.getProprietor().equals(passengerVehicle.getProprietor())){
                     passengerVehicle.setMaxPassengers(newPassengerVehicle.getMaxPassengers());
                     passengerVehicle.setBrand(newPassengerVehicle.getBrand());
                     passengerVehicle.setModel(newPassengerVehicle.getModel());
                     passengerVehicle.setColour(newPassengerVehicle.getColour());
-                    deleteProprietorsAssociated(passengerVehicle);
-                    passengerVehicle.setAssociatedProprietorList(newPassengerVehicle.getAssociatedProprietorList());
                     passengerVehicle.setProprietor(newPassengerVehicle.getProprietor());
                     passengerVehicle.setPlate(newPassengerVehicle.getPlate());
                     return true;
@@ -307,7 +305,7 @@ public class TransportCompany {
     }
 
     public boolean changeAttributesCargoVehicle(CargoVehicle cargoVehicle, CargoVehicle newCargoVehicle){
-        if (!isProprietorInAssociates(newCargoVehicle.getAssociatedProprietorList(), newCargoVehicle.getProprietor())){
+        if (!isProprietorInAssociates(cargoVehicle.getAssociatedProprietorList(), newCargoVehicle.getProprietor())){
             if (isProprietorAvailable(newCargoVehicle.getProprietor()) || newCargoVehicle.getProprietor().equals(cargoVehicle.getProprietor())){
                 if (!verifyVehicle(newCargoVehicle.getPlate()) || newCargoVehicle.getPlate().equals(cargoVehicle.getPlate())){
                     cargoVehicle.setPlate(newCargoVehicle.getPlate());
@@ -317,8 +315,6 @@ public class TransportCompany {
                     cargoVehicle.setCargoCapacity(newCargoVehicle.getCargoCapacity());
                     cargoVehicle.setAxlesNumber(newCargoVehicle.getAxlesNumber());
                     cargoVehicle.setProprietor(newCargoVehicle.getProprietor());
-                    deleteProprietorsAssociated(cargoVehicle);
-                    cargoVehicle.setAssociatedProprietorList(newCargoVehicle.getAssociatedProprietorList());
                     return true;
                 }
             }
