@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: #aba8a6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.ProprietorViewController">
+   <children>
+      <Label fx:id="lbl_proprietorMenu" layoutX="421.0" layoutY="22.0" text="Proprietor Menu" textFill="#434343">
+         <font>
+            <Font name="Calibri Bold" size="48.0" />
+         </font>
+      </Label>
+      <Button fx:id="bt_menu" layoutX="507.0" layoutY="578.0" mnemonicParsing="false" onAction="#onOpenMenu" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Principal Menu" textFill="#434343">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Button>
+      <Label fx:id="lb_id" layoutX="453.0" layoutY="104.0" text="Id:" textFill="#434343">
+         <font>
+            <Font name="Verdana Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb_phoneNumber" layoutX="146.0" layoutY="195.0" text="Phone Number:" textFill="#434343">
+         <font>
+            <Font name="Verdana Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb_name" layoutX="52.0" layoutY="105.0" text="Name:" textFill="#434343">
+         <font>
+            <Font name="Verdana Bold" size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tbl_1" layoutX="112.0" layoutY="349.0" prefHeight="200.0" prefWidth="976.0" style="-fx-border-color: #434343; -fx-border-width: 2; -fx-font-size: 18px;">
+         <columns>
+            <TableColumn fx:id="cl_name" prefWidth="245.0" text="Name" />
+            <TableColumn fx:id="cl_id" prefWidth="188.0" text="Id" />
+            <TableColumn fx:id="cl_email" prefWidth="267.0" text="Email" />
+            <TableColumn fx:id="cl_phoneNumber" prefWidth="273.0" text="Phone Numer" />
+         </columns>
+      </TableView>
+      <Button fx:id="bt_addProprietor" layoutX="204.0" layoutY="267.0" mnemonicParsing="false" onAction="#onAddProprietor" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Add Proprietor" textFill="#434343">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="bt_updateProprietor" layoutX="418.0" layoutY="267.0" mnemonicParsing="false" onAction="#onUpdateProprietor" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Update Proprietor" textFill="#434343">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="bt_deleteProprietor" layoutX="665.0" layoutY="267.0" mnemonicParsing="false" onAction="#onDeleteProprietor" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Delete Proprietor" textFill="#434343">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="bt_clean" layoutX="905.0" layoutY="267.0" mnemonicParsing="false" onAction="#onClean" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Clean" textFill="#434343">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txt_name" layoutX="164.0" layoutY="100.0" style="-fx-background-color: #bcb4b0; -fx-text-fill: #434343; -fx-border-color: #434343; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 2;">
+         <font>
+            <Font name="Verdana" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txt_phoneNumber" layoutX="374.0" layoutY="190.0" style="-fx-background-color: #bcb4b0; -fx-text-fill: #434343; -fx-border-color: #434343; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 2;">
+         <font>
+            <Font name="Verdana" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txt_id" layoutX="506.0" layoutY="100.0" style="-fx-background-color: #bcb4b0; -fx-text-fill: #434343; -fx-border-color: #434343; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 2;">
+         <font>
+            <Font name="Verdana" size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txt_email" layoutX="886.0" layoutY="101.0" style="-fx-background-color: #bcb4b0; -fx-text-fill: #434343; -fx-border-color: #434343; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 2;">
+         <font>
+            <Font name="Verdana" size="18.0" />
+         </font>
+      </TextField>
+      <Label fx:id="lb_email" layoutX="786.0" layoutY="104.0" text="Email:" textFill="#434343">
+         <font>
+            <Font name="Verdana Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="lb_vehicle" layoutX="662.0" layoutY="194.0" text="Vehicle:" textFill="#434343">
+         <font>
+            <Font name="Verdana Bold" size="24.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cb_vehicle" layoutX="791.0" layoutY="190.0" prefHeight="39.0" prefWidth="240.0" style="-fx-font-family: 'Verdana'; -fx-font-size: 20px;" />
+   </children>
+</Pane>

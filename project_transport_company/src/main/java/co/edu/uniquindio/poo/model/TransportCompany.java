@@ -124,9 +124,9 @@ public class TransportCompany {
         boolean done = false;
         for (User user : usersList) {
             if (user.getName().equals(name)) {
-                deleteUserFromVehicle(user.getVehicleAssociated() ,user);
-                usersList.remove(user);
                 done = true;
+                deleteUserFromVehicle(user);
+                usersList.remove(user);
                 break;
             }
         }
@@ -173,9 +173,11 @@ public class TransportCompany {
         boolean done = false;
         for (Proprietor proprietor : propietorsList) {
             if (proprietor.getId().equals(id)) {
-                deleteUsersFromVehicle(proprietor.getPrincipalVehicle());
                 deleteProprietorFromVehicles(proprietor);
-                deleteVehicle(proprietor.getPrincipalVehicle().getPlate());
+                if (proprietor.getPrincipalVehicle() != null) {
+                    deleteUsersFromVehicle(proprietor.getPrincipalVehicle());
+                    deleteVehicle(proprietor.getPrincipalVehicle().getPlate());
+                }
                 propietorsList.remove(proprietor);
                 done = true;
                 break;
@@ -188,11 +190,17 @@ public class TransportCompany {
         boolean done = false;
         for (Proprietor proprietor : propietorsList) {
             if (proprietor.getId().equals(id)) {
-                proprietor.setName(newProprietor.getName());
-                proprietor.setEmail(newProprietor.getEmail());
-                proprietor.setPhoneNumber(newProprietor.getPhoneNumber());
-                done = true;
-                break;
+                if (!verifyProprietor(newProprietor.getId()) || newProprietor.getId().equals(id)) {
+                    if (isProprietorAvailable(newProprietor) || newProprietor.getPrincipalVehicle().equals(proprietor.getPrincipalVehicle())) {
+                        proprietor.setId(newProprietor.getId());
+                        proprietor.setName(newProprietor.getName());
+                        proprietor.setEmail(newProprietor.getEmail());
+                        proprietor.setPhoneNumber(newProprietor.getPhoneNumber());
+                        proprietor.setPrincipalVehicle(newProprietor.getPrincipalVehicle());
+                        done = true;
+                        break;
+                    }
+                }
             }
         }
         return done;
@@ -361,9 +369,11 @@ public class TransportCompany {
         }
     }
 
-    public void deleteUserFromVehicle(PassengerVehicle passengerVehicle, User user) {
-        user.setVehicleAssociated(null);
-        passengerVehicle.getAssociatedUsersList().remove(user);
+    public void deleteUserFromVehicle(User user) {
+        if (user.getVehicleAssociated() != null) {
+            user.setVehicleAssociated(null);
+            user.getVehicleAssociated().getAssociatedUsersList().remove(user);
+        }
     }
 
     public boolean addProprietorAssociated(Vehicle vehicle, Proprietor proprietor){

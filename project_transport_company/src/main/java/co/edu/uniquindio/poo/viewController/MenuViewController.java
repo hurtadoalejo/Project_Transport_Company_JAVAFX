@@ -51,7 +51,7 @@ public class MenuViewController {
      */
     @FXML
     void onOpenProprietors() {
-        //app.openProprietor();
+        app.openProprietor();
     }
 
     /**
@@ -59,7 +59,7 @@ public class MenuViewController {
      */
     @FXML
     void onOpenVehicles() {
-        //app.openVehicle();
+        app.openVehicle();
     }
 
     /**

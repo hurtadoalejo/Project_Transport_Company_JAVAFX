@@ -112,7 +112,7 @@ public class UserViewController {
 
     /**
      * Method to create an user with the data written on the text fields
-     * @return
+     * @return An user object
      */
     private User buildUser(){
         User user = new User(txt_1.getText(), Integer.parseInt(txt_2.getText()), Double.parseDouble(txt_3.getText()));
@@ -136,9 +136,8 @@ public class UserViewController {
      * Method to delete an user from the users list by a name given
      */
     private void deleteUser(){
-        if (userController.deleteUser(txt_1.getText())) {
+        if (userController.deleteUser(selectedUser.getName())) {
             usersList.remove(selectedUser);
-            cleanUserFields();
             cleanSelection();
         }
     }
@@ -150,7 +149,6 @@ public class UserViewController {
         if (verifyFilledFields() && verifyValidFields()) {
             if (selectedUser != null && userController.updateUser(selectedUser.getName(), buildUser())) {
                 tbl_1.refresh();
-                cleanUserFields();
                 cleanSelection();
             }
         }
@@ -227,7 +225,7 @@ public class UserViewController {
     }
 
     /**
-     * Method to obtain the transpor commpany's users list and then assign it to the controller's users list
+     * Method to obtain the transport company's users list and then assign it to the controller's users list
      */
     private void obtainUsers() {
         usersList.addAll(userController.obtainUsersList());
@@ -254,7 +252,7 @@ public class UserViewController {
     }
 
     /**
-     * Method to configure the element sleccion from the user table
+     * Method to configure the element selection from the user table
      */
     private void listenerSelection() {
         tbl_1.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {

@@ -10,7 +10,9 @@ import java.io.IOException;
 import co.edu.uniquindio.poo.model.TransportCompany;
 import co.edu.uniquindio.poo.viewController.MenuViewController;
 import co.edu.uniquindio.poo.viewController.PrimaryViewController;
+import co.edu.uniquindio.poo.viewController.ProprietorViewController;
 import co.edu.uniquindio.poo.viewController.UserViewController;
+import co.edu.uniquindio.poo.viewController.VehicleViewController;
 
 /**
  * JavaFX App
@@ -90,6 +92,46 @@ public class App extends Application {
             e.printStackTrace();
         }
     } 
+
+    /**
+     * Method to initialize the proprietor menu interface
+     */
+    public void openProprietor() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("proprietor.fxml"));
+            javafx.scene.layout.Pane rootLayout = (javafx.scene.layout.Pane) loader.load();
+            ProprietorViewController proprietorViewController = loader.getController();
+            proprietorViewController.setApp(this);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            System.err.println("Error al cargar el archivo FXML: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Method to initialize the vehicle menu interface
+     */
+    public void openVehicle() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("vehicle.fxml"));
+            javafx.scene.layout.Pane rootLayout = (javafx.scene.layout.Pane) loader.load();
+            VehicleViewController vehicleViewController = loader.getController();
+            vehicleViewController.setApp(this);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            System.err.println("Error al cargar el archivo FXML: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
 
     public static void main(String[] args) {
         launch();
