@@ -6,13 +6,11 @@ import java.util.ResourceBundle;
 import co.edu.uniquindio.poo.App;
 import co.edu.uniquindio.poo.controller.ProprietorController;
 import co.edu.uniquindio.poo.model.Proprietor;
-import co.edu.uniquindio.poo.model.Vehicle;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -36,12 +34,6 @@ public class ProprietorViewController {
 
     @FXML
     private TableView<Proprietor> tbl_1;
-
-    @FXML
-    private ComboBox<Vehicle> cb_vehicle;
-
-    @FXML
-    private Label lb_vehicle;
 
     @FXML
     private TableColumn<Proprietor, String> cl_name;
@@ -220,9 +212,6 @@ public class ProprietorViewController {
             txt_id.setText(proprietor.getId());
             txt_email.setText(proprietor.getEmail());
             txt_phoneNumber.setText(proprietor.getPhoneNumber());
-            lb_vehicle.setVisible(true);
-            cb_vehicle.setVisible(true);
-            cb_vehicle.getSelectionModel().select(proprietor.getPrincipalVehicle());
         }
     }
 
@@ -270,8 +259,6 @@ public class ProprietorViewController {
     private void cleanSelection(){
         tbl_1.getSelectionModel().clearSelection();
         cleanProprietorsFields();
-        lb_vehicle.setVisible(false);
-        cb_vehicle.setVisible(false);
     }
 
     /**
@@ -282,7 +269,6 @@ public class ProprietorViewController {
         txt_id.clear();
         txt_email.clear();
         txt_phoneNumber.clear();
-        cb_vehicle.getSelectionModel().clearSelection();
     }
 
     /**
@@ -298,14 +284,9 @@ public class ProprietorViewController {
      */
     @FXML
     void initialize() {
-        lb_vehicle.setVisible(false);
-        cb_vehicle.setVisible(false);
         proprietorController = new ProprietorController(App.transportCompany);
-        cb_vehicle.getItems().addAll();
         initView();
         assert tbl_1 != null : "fx:id=\"tbl_1\" was not injected: check your FXML file 'proprietor.fxml'.";
-        assert cb_vehicle != null : "fx:id=\"cb_vehicle\" was not injected: check your FXML file 'proprietor.fxml'.";
-        assert lb_vehicle != null : "fx:id=\"lb_vehicle\" was not injected: check your FXML file 'proprietor.fxml'.";
         assert cl_name != null : "fx:id=\"cl_name\" was not injected: check your FXML file 'proprietor.fxml'.";
         assert lb_phoneNumber != null : "fx:id=\"lb_phoneNumber\" was not injected: check your FXML file 'proprietor.fxml'.";
         assert bt_deleteProprietor != null : "fx:id=\"bt_deleteProprietor\" was not injected: check your FXML file 'proprietor.fxml'.";
