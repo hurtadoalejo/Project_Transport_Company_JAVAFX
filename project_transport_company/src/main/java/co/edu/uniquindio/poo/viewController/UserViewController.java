@@ -138,7 +138,7 @@ public class UserViewController {
     private void deleteUser(){
         if (userController.deleteUser(selectedUser.getName())) {
             usersList.remove(selectedUser);
-            cleanSelection();
+            cleanUserFields();
         }
     }
 

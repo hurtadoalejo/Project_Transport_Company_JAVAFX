@@ -196,7 +196,6 @@ public class TransportCompany {
                         proprietor.setName(newProprietor.getName());
                         proprietor.setEmail(newProprietor.getEmail());
                         proprietor.setPhoneNumber(newProprietor.getPhoneNumber());
-                        proprietor.setPrincipalVehicle(newProprietor.getPrincipalVehicle());
                         done = true;
                         break;
                     }

@@ -136,22 +136,75 @@ public class VehicleViewController {
 
     @FXML
     void onAddVehicle() {
-        //addVehicle();
+        addVehicle();
     }
 
     @FXML
     void onUpdateVehicle() {
-        //updateVehicle();
+        updateVehicle();
     }
 
     @FXML
     void onDeleteVehicle() {
-        //deleteVehicle();
+        deleteVehicle();
     }
 
     @FXML
     void onClean() {
         cleanSelection();
+    }
+
+    /**
+     * Method to create a vehicle with the data written on the text fields
+     * @return A vehicle object
+     */
+    private Vehicle buildVehicle(){
+        Vehicle vehicle = null;
+        if (cb_type.getSelectionModel().getSelectedItem() == null) {
+            return null;
+        }
+        if (cb_type.getSelectionModel().getSelectedItem().equals("Passenger Vehicle")) {
+            vehicle = new PassengerVehicle(txt_plate.getText(), txt_brand.getText(), txt_colour.getText(), Integer.parseInt(txt_model.getText()), cb_proprietor.getSelectionModel().getSelectedItem(), Integer.parseInt(txt_maxPassengers.getText()));
+        }
+        else if (cb_type.getSelectionModel().getSelectedItem().equals("Cargo Vehicle")) {
+            vehicle = new CargoVehicle(txt_plate.getText(), txt_brand.getText(), txt_colour.getText(), Integer.parseInt(txt_model.getText()), Double.parseDouble(txt_cargoCapacity.getText()), Integer.parseInt(txt_axlesNumber.getText()), cb_proprietor.getSelectionModel().getSelectedItem());
+        }
+        return vehicle;
+    }
+
+    /**
+     * Method to add a vehicle into the vehicles list
+     */
+    private void addVehicle(){
+        if (verifyValidFields() && verifyFilledFields()) {
+            Vehicle vehicle = buildVehicle();
+            if (vehicleController.createVehicle(vehicle)) {
+                vehiclesList.add(vehicle);
+                cleanSelection();
+            }
+        }
+    }
+
+    /**
+     * Method to delete a vehicle from the vehicles list by a plate given
+     */
+    private void deleteVehicle(){
+        if (vehicleController.deleteVehicle(selectedVehicle.getPlate())) {
+            vehiclesList.remove(selectedVehicle);
+            cleanSelection();
+        }
+    }
+
+    /**
+     * Method to update a vehicle's information
+     */
+    private void updateVehicle(){
+        if (verifyValidFields() && verifyFilledFields()) {
+            if (selectedVehicle != null && vehicleController.updateVehicle(selectedVehicle.getPlate(), buildVehicle())) {
+                tbl_1.refresh();
+                cleanSelection();
+            }
+        }
     }
 
     /**
@@ -178,14 +231,16 @@ public class VehicleViewController {
      */
     private boolean verifyValidFields(){
         boolean valid = false;
-        if (cb_type.getSelectionModel().getSelectedItem().equals("Passenger Vehicle")) {
-            if (isInteger(txt_model.getText()) && isInteger(txt_maxPassengers.getText())) {
-                valid = true;
+        if (cb_type.getSelectionModel().getSelectedItem() != null) {
+            if (cb_type.getSelectionModel().getSelectedItem().equals("Passenger Vehicle")) {
+                if (isInteger(txt_model.getText()) && isInteger(txt_maxPassengers.getText())) {
+                    valid = true;
+                }
             }
-        }
-        else if (cb_type.getSelectionModel().getSelectedItem().equals("Cargo Vehicle")) {
-            if (isInteger(txt_model.getText()) && isInteger(txt_axlesNumber.getText()) && isDouble(txt_cargoCapacity.getText())) {
-                valid = true;
+            else if (cb_type.getSelectionModel().getSelectedItem().equals("Cargo Vehicle")) {
+                if (isInteger(txt_model.getText()) && isInteger(txt_axlesNumber.getText()) && isDouble(txt_cargoCapacity.getText())) {
+                    valid = true;
+                }
             }
         }
         return valid;
