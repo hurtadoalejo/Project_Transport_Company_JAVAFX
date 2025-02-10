@@ -107,7 +107,7 @@ public class AssociatedViewController {
     }
 
     /**
-     * Method to delete and associated to a vehicle list
+     * Method to delete an associated to a vehicle list
      */
     private void deleteAssociated(){
         if (cb_vehicle.getSelectionModel().getSelectedItem() == null && cb_associated.getSelectionModel().getSelectedItem() == null) {
@@ -137,7 +137,7 @@ public class AssociatedViewController {
     }
 
     /**
-     * Method to clean the element selection from the proprietors table
+     * Method to clean the element selection from the proprietor's table
      */
     private void cleanSelection(){
         cb_vehicle.setDisable(false);
@@ -255,6 +255,10 @@ public class AssociatedViewController {
         updateTableList(vehicle);
     }
 
+    /**
+     * Method to update the table list depending on the vehicle
+     * @param vehicle
+     */
     private void updateTableList(Vehicle vehicle){
         initDataBinding();
         tbl_1.getItems().clear();

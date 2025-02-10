@@ -24,6 +24,9 @@ public class MenuViewController {
     private Button bt_5;
 
     @FXML
+    private Button bt_6;
+
+    @FXML
     private Label lbl_1;
 
     @FXML
@@ -73,9 +76,20 @@ public class MenuViewController {
         //app.openSearch();
     }
 
+    /**
+     * Method to initialize the associated to vehicle interface
+     */
     @FXML
     void onOpenAssociatedToVehicle() {
         app.openAssociated();
+    }
+
+    /**
+     * Method to initialize the user to vehicle interface
+     */
+    @FXML
+    void onOpenUserToVehicle() {
+        app.openUserToVehicle();
     }
 
     /**
@@ -92,12 +106,12 @@ public class MenuViewController {
     @FXML
     void initialize() {
         assert bt_5 != null : "fx:id=\"bt_5\" was not injected: check your FXML file 'menu.fxml'.";
+        assert bt_6 != null : "fx:id=\"bt_6\" was not injected: check your FXML file 'menu.fxml'.";
         assert lbl_1 != null : "fx:id=\"lbl_1\" was not injected: check your FXML file 'menu.fxml'.";
         assert bt_3 != null : "fx:id=\"bt_3\" was not injected: check your FXML file 'menu.fxml'.";
         assert bt_4 != null : "fx:id=\"bt_4\" was not injected: check your FXML file 'menu.fxml'.";
         assert bt_1 != null : "fx:id=\"bt_1\" was not injected: check your FXML file 'menu.fxml'.";
         assert bt_2 != null : "fx:id=\"bt_2\" was not injected: check your FXML file 'menu.fxml'.";
         assert pane != null : "fx:id=\"pane\" was not injected: check your FXML file 'menu.fxml'.";
-
     }
 }

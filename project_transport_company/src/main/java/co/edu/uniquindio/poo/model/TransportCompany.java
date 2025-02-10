@@ -341,15 +341,11 @@ public class TransportCompany {
         return isAvailable;
     }
 
-    public boolean addUserToVehicle(PassengerVehicle passengerVehicle, String name){
-        for (User user : passengerVehicle.getAssociatedUsersList()){
-            if (user.getName().equals(name)){
-                if (user.getVehicleAssociated() == null) {
-                    user.setVehicleAssociated(passengerVehicle);
-                    passengerVehicle.getAssociatedUsersList().add(user);
-                    return true;
-                }
-            }
+    public boolean addUserToVehicle(PassengerVehicle passengerVehicle, User user){
+        if (!passengerVehicle.getAssociatedUsersList().contains(user) && user.getVehicleAssociated() == null) {
+            user.setVehicleAssociated(passengerVehicle);
+            passengerVehicle.getAssociatedUsersList().add(user);
+            return true;
         }
         return false;
     }
@@ -364,11 +360,13 @@ public class TransportCompany {
         }
     }
 
-    public void deleteUserFromVehicle(User user) {
+    public boolean deleteUserFromVehicle(User user) {
         if (user.getVehicleAssociated() != null) {
-            user.setVehicleAssociated(null);
             user.getVehicleAssociated().getAssociatedUsersList().remove(user);
+            user.setVehicleAssociated(null);
+            return true;
         }
+        return false;
     }
 
     public boolean addProprietorAssociated(Vehicle vehicle, Proprietor proprietor){

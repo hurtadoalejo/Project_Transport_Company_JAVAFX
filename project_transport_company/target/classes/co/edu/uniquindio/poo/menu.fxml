@@ -7,34 +7,39 @@
 
 <Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: #aba8a6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.MenuViewController">
    <children>
-      <Button fx:id="bt_1" layoutX="127.0" layoutY="245.0" mnemonicParsing="false" onAction="#onOpenUsers" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Users" textFill="#434343">
+      <Button fx:id="bt_1" layoutX="805.0" layoutY="363.0" mnemonicParsing="false" onAction="#onOpenUsers" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Users" textFill="#434343">
          <font>
-            <Font name="Calibri Bold" size="64.0" />
+            <Font name="Calibri Bold" size="48.0" />
          </font>
       </Button>
-      <Label fx:id="lbl_1" layoutX="482.0" layoutY="27.0" text="Menú" textFill="#434343">
+      <Label fx:id="lbl_1" layoutX="482.0" layoutY="23.0" text="Menú" textFill="#434343">
          <font>
             <Font name="Calibri Bold" size="96.0" />
          </font>
       </Label>
-      <Button fx:id="bt_2" layoutX="404.0" layoutY="245.0" mnemonicParsing="false" onAction="#onOpenProprietors" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Proprietors" textFill="#434343">
+      <Button fx:id="bt_2" layoutX="589.0" layoutY="222.0" mnemonicParsing="false" onAction="#onOpenProprietors" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Proprietors" textFill="#434343">
          <font>
-            <Font name="Calibri Bold" size="64.0" />
+            <Font name="Calibri Bold" size="48.0" />
          </font>
       </Button>
-      <Button fx:id="bt_3" layoutX="832.0" layoutY="245.0" mnemonicParsing="false" onAction="#onOpenVehicles" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Vehicles" textFill="#434343">
+      <Button fx:id="bt_3" layoutX="917.0" layoutY="222.0" mnemonicParsing="false" onAction="#onOpenVehicles" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Vehicles" textFill="#434343">
          <font>
-            <Font name="Calibri Bold" size="64.0" />
+            <Font name="Calibri Bold" size="48.0" />
          </font>
       </Button>
-      <Button fx:id="bt_4" layoutX="874.0" layoutY="449.0" mnemonicParsing="false" onAction="#onOpenSearch" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Search" textFill="#434343">
+      <Button fx:id="bt_4" layoutX="793.0" layoutY="497.0" mnemonicParsing="false" onAction="#onOpenSearch" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Search" textFill="#434343">
          <font>
-            <Font name="Calibri Bold" size="64.0" />
+            <Font name="Calibri Bold" size="48.0" />
          </font>
       </Button>
-      <Button fx:id="bt_5" layoutX="127.0" layoutY="449.0" mnemonicParsing="false" onAction="#onOpenAssociatedToVehicle" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Associated To Vehicle" textFill="#434343">
+      <Button fx:id="bt_5" layoutX="49.0" layoutY="351.0" mnemonicParsing="false" onAction="#onOpenAssociatedToVehicle" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Associated To Vehicle" textFill="#434343">
          <font>
-            <Font name="Calibri Bold" size="64.0" />
+            <Font name="Calibri Bold" size="48.0" />
+         </font>
+      </Button>
+      <Button fx:id="bt_6" layoutX="110.0" layoutY="222.0" mnemonicParsing="false" onAction="#onOpenUserToVehicle" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="User To Vehicle" textFill="#434343">
+         <font>
+            <Font name="Calibri Bold" size="48.0" />
          </font>
       </Button>
    </children>
