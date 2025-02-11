@@ -73,7 +73,7 @@ public class MenuViewController {
      */
     @FXML
     void onOpenSearch() {
-        //app.openSearch();
+        app.openUsersInVehicle();
     }
 
     /**

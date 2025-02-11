@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: #aba8a6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.viewController.SearchUserViewController">
+   <children>
+      <Label fx:id="lbl_title" layoutX="247.0" layoutY="35.0" text="Users In Passenger Vehicle" textFill="#434343">
+         <font>
+            <Font name="Calibri Bold" size="64.0" />
+         </font>
+      </Label>
+      <Button fx:id="bt_menu" layoutX="461.0" layoutY="538.0" mnemonicParsing="false" onAction="#onOpenMenu" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Principal Menu" textFill="#434343">
+         <font>
+            <Font name="Calibri Bold" size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="bt_search" layoutX="443.0" layoutY="409.0" mnemonicParsing="false" onAction="#onSearch" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Search" textFill="#434343">
+         <font>
+            <Font name="Calibri Bold" size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="bt_clean" layoutX="622.0" layoutY="409.0" mnemonicParsing="false" onAction="#onClean" style="-fx-background-color: #bcb4b0; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #434343; -fx-border-width: 2;" text="Clean" textFill="#434343">
+         <font>
+            <Font name="Calibri Bold" size="36.0" />
+         </font>
+      </Button>
+      <Label fx:id="lb_plate" layoutX="358.0" layoutY="163.0" text="Plate:" textFill="#434343">
+         <font>
+            <Font name="Verdana Bold" size="48.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txt_personalizedMessage" layoutX="36.0" layoutY="271.0" prefHeight="108.0" prefWidth="1130.0" style="-fx-background-color: #bcb4b0; -fx-text-fill: #434343; -fx-border-color: #434343; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 2;">
+         <font>
+            <Font name="Verdana" size="33.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txt_plate" layoutX="551.0" layoutY="145.0" prefHeight="94.0" prefWidth="259.0" style="-fx-background-color: #bcb4b0; -fx-text-fill: #434343; -fx-border-color: #434343; -fx-border-radius: 20; -fx-background-radius: 20; -fx-border-width: 2;">
+         <font>
+            <Font name="Verdana" size="48.0" />
+         </font>
+      </TextField>
+   </children>
+</Pane>

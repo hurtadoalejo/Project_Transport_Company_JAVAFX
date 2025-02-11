@@ -12,6 +12,7 @@ import co.edu.uniquindio.poo.viewController.AssociatedViewController;
 import co.edu.uniquindio.poo.viewController.MenuViewController;
 import co.edu.uniquindio.poo.viewController.PrimaryViewController;
 import co.edu.uniquindio.poo.viewController.ProprietorViewController;
+import co.edu.uniquindio.poo.viewController.SearchUserViewController;
 import co.edu.uniquindio.poo.viewController.UserToVehicleViewController;
 import co.edu.uniquindio.poo.viewController.UserViewController;
 import co.edu.uniquindio.poo.viewController.VehicleViewController;
@@ -165,6 +166,26 @@ public class App extends Application {
             javafx.scene.layout.Pane rootLayout = (javafx.scene.layout.Pane) loader.load();
             UserToVehicleViewController userToVehicleViewController = loader.getController();
             userToVehicleViewController.setApp(this);
+
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            System.err.println("Error al cargar el archivo FXML: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Method to initialize the users in vehicle interface
+     */
+    public void openUsersInVehicle() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(App.class.getResource("searchUsers.fxml"));
+            javafx.scene.layout.Pane rootLayout = (javafx.scene.layout.Pane) loader.load();
+            SearchUserViewController searchUserViewController = loader.getController();
+            searchUserViewController.setApp(this);
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);

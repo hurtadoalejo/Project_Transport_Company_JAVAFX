@@ -398,4 +398,29 @@ public class TransportCompany {
             deleteProprietorAssociated(vehicle, proprietor);
         }
     }
+
+    public String searchUsersInPassengerVehicle(String plate){
+        String message = "";
+        int counter = countUsersInPassengerVehicle(plate);
+        if (counter == 0) {
+            message = "El vehiculo de placas " + plate + ", no tiene usuarios asociados.";
+        }
+        else if (counter == 1) {
+            message = "El vehiculo de placas " + plate + ", tiene " + counter + " usuario asociado.";
+        }
+        else if (counter > 1){
+            message = "El vehiculo de placas " + plate + ", tiene " + counter + " usuarios asociados.";
+        }
+        return message;
+    }
+
+    public int countUsersInPassengerVehicle(String plate){
+        int counter = 0;
+        for(PassengerVehicle passengerVehicle : passengerVehiclesList){
+            if (passengerVehicle.getPlate().equals(plate)) {
+                counter = passengerVehicle.getAssociatedUsersList().size();
+            }
+        }
+        return counter;
+    }
 }
