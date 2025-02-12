@@ -411,14 +411,22 @@ public class TransportCompany {
         else if (counter > 1){
             message = "El vehiculo de placas " + plate + ", tiene " + counter + " usuarios asociados.";
         }
+        else if (counter == -1) {
+            message = "El vehiculo de placas " + plate + ", no existe.";
+        }
         return message;
     }
 
     public int countUsersInPassengerVehicle(String plate){
         int counter = 0;
+        boolean exist = false;
         for(PassengerVehicle passengerVehicle : passengerVehiclesList){
             if (passengerVehicle.getPlate().equals(plate)) {
                 counter = passengerVehicle.getAssociatedUsersList().size();
+                exist = true;
+            }
+            if (!exist) {
+                counter = -1;
             }
         }
         return counter;

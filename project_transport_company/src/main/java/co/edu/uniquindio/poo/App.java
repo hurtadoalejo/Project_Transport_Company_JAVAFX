@@ -7,6 +7,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import co.edu.uniquindio.poo.model.PassengerVehicle;
+import co.edu.uniquindio.poo.model.Proprietor;
 import co.edu.uniquindio.poo.model.TransportCompany;
 import co.edu.uniquindio.poo.viewController.AssociatedViewController;
 import co.edu.uniquindio.poo.viewController.MenuViewController;
@@ -40,6 +42,7 @@ public class App extends Application {
      * Method to initialize the principal interface
      */
     public void openPrincipalView() {
+        initializeData();
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("primary.fxml"));
@@ -200,4 +203,14 @@ public class App extends Application {
         launch();
     }
 
+    public void initializeData(){
+        Proprietor proprietor = new Proprietor("Alejandro", "alejo@gmail.com", "3161971519", "1092850037");
+        Proprietor proprietor2 = new Proprietor("Veronica", "vero@gmail.com", "3161971519", "1092850000");
+        Proprietor proprietor3 = new Proprietor("Sofia", "sofia@gmail.com", "3161971519", "1092850024");
+        transportCompany.addProprietor(proprietor);
+        transportCompany.addProprietor(proprietor2);
+        transportCompany.addProprietor(proprietor3);
+        PassengerVehicle passengerVehicle = new PassengerVehicle("VAD92G", "Mazda", "Red", 2020, proprietor, 5);
+        transportCompany.addVehicle(passengerVehicle);
+    }
 }
