@@ -179,23 +179,23 @@ public class ProprietorViewController {
      */
     private boolean verifyValidFields(){
         boolean valid = false;
-        if (isInteger(txt_id.getText()) && isInteger(txt_phoneNumber.getText())) {
+        if (isLong(txt_id.getText()) && isLong(txt_phoneNumber.getText())) {
             valid = true;
         }
         return valid;
     }
 
     /**
-     * Method to know if a string date is an integer date
+     * Method to know if a string date is a long date
      * @param text String to verify
-     * @return Boolean that confirms if the string is an integer date or not
+     * @return Boolean that confirms if the string is a long date or not
      */
-    private boolean isInteger(String text){
+    private boolean isLong(String text){
         if (text == null || text.isEmpty()) {
             return false;
         }
         try {
-            Integer.parseInt(text);
+            Long.parseLong(text);
             return true;
         } catch (NumberFormatException e) {
             return false;
