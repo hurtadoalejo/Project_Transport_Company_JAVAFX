@@ -295,6 +295,7 @@ public class TransportCompany {
                     passengerVehicle.setBrand(newPassengerVehicle.getBrand());
                     passengerVehicle.setModel(newPassengerVehicle.getModel());
                     passengerVehicle.setColour(newPassengerVehicle.getColour());
+                    passengerVehicle.getProprietor().setPrincipalVehicle(null);
                     passengerVehicle.setProprietor(newPassengerVehicle.getProprietor());
                     passengerVehicle.setPlate(newPassengerVehicle.getPlate());
                     return true;
@@ -314,6 +315,7 @@ public class TransportCompany {
                     cargoVehicle.setModel(newCargoVehicle.getModel());
                     cargoVehicle.setCargoCapacity(newCargoVehicle.getCargoCapacity());
                     cargoVehicle.setAxlesNumber(newCargoVehicle.getAxlesNumber());
+                    cargoVehicle.getProprietor().setPrincipalVehicle(null);
                     cargoVehicle.setProprietor(newCargoVehicle.getProprietor());
                     return true;
                 }
