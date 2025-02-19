@@ -7,10 +7,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import co.edu.uniquindio.poo.model.PassengerVehicle;
-import co.edu.uniquindio.poo.model.Proprietor;
+import co.edu.uniquindio.poo.model.ModelFactory;
 import co.edu.uniquindio.poo.model.TransportCompany;
-import co.edu.uniquindio.poo.model.User;
 import co.edu.uniquindio.poo.viewController.AssociatedViewController;
 import co.edu.uniquindio.poo.viewController.MenuViewController;
 import co.edu.uniquindio.poo.viewController.PrimaryViewController;
@@ -27,7 +25,7 @@ public class App extends Application {
 
     private Stage primaryStage;
     @SuppressWarnings("exports")
-    public static TransportCompany transportCompany = new TransportCompany("La Carreta");
+    public static TransportCompany transportCompany;
 
     /**
      * Method to initialize the main interface
@@ -43,8 +41,8 @@ public class App extends Application {
      * Method to initialize the principal interface
      */
     public void openPrincipalView() {
-        initializeData();
         try {
+            invoke();
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(App.class.getResource("primary.fxml"));
             javafx.scene.layout.Pane rootLayout = (javafx.scene.layout.Pane) loader.load();
@@ -204,22 +202,8 @@ public class App extends Application {
         launch();
     }
 
-    public void initializeData(){
-        Proprietor proprietor = new Proprietor("Alejandro", "alejo@gmail.com", "3161971519", "1");
-        Proprietor proprietor2 = new Proprietor("Veronica", "vero@gmail.com", "3161971519", "2");
-        Proprietor proprietor3 = new Proprietor("Sofia", "sofia@gmail.com", "3161971519", "3");
-        transportCompany.addProprietor(proprietor);
-        transportCompany.addProprietor(proprietor2);
-        transportCompany.addProprietor(proprietor3);
-        PassengerVehicle passengerVehicle = new PassengerVehicle("VAD01", "Mazda", "Red", 2020, proprietor, 5);
-        PassengerVehicle passengerVehicle2 = new PassengerVehicle("VAD02", "Toyota", "Black", 2018, proprietor2, 1);
-        transportCompany.addVehicle(passengerVehicle);
-        transportCompany.addVehicle(passengerVehicle2);
-        User user = new User("Valentina", 22, 56);
-        User user2 = new User("Jorge", 40, 87);
-        transportCompany.addUser(user);
-        transportCompany.addUser(user2);
-        transportCompany.addUserToVehicle(passengerVehicle, user);
-        transportCompany.addProprietorAssociated(passengerVehicle, proprietor);
+    private void invoke(){
+        ModelFactory modelFactory = ModelFactory.getInstance();
+        App.transportCompany = modelFactory.getTransportCompany();
     }
 }
